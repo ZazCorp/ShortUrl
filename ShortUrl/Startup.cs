@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataBase;
+using Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Services;
+using Services.Repositorys;
 
 namespace ShortUrl
 {
@@ -27,6 +31,15 @@ namespace ShortUrl
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region База данных
+
+            //получаем строку подключения
+            var connectionString = Configuration.GetConnectionString("DataAccessPostgreSqlProvider");
+            //регистрация контекста
+
+            services.AddTransient<IUrlService, UrlService>();
+
+            #endregion
             // Add framework services.
             services.AddMvc();
         }
