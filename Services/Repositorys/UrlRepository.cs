@@ -13,16 +13,13 @@ namespace Services.Repositorys
 {
     public class UrlRepository:IRepository<Url>
     {
-        private MyContext _db;
+        private readonly MyContext _db;
 
         public UrlRepository(MyContext db)
         {
             _db = db;
         }
 
-        public UrlRepository()
-        {
-        }
 
         public IEnumerable<Url> GetAll()
         {

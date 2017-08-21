@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataBase;
 using Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using MyModels;
 using Services.Repositorys;
 
@@ -14,17 +16,19 @@ namespace ShortUrl.Controllers
     [Route("api/[controller]")]
     public class UrlController : Controller
     {
-        readonly Uow _uow = new Uow();
+        private readonly Uow _uow;       
         private readonly IUrlService _urlService;
-        public UrlController(IUrlService urlService)
+        public UrlController(IUrlService urlService, MyContext db)
         {
-            this._urlService = urlService;
+            _urlService = urlService;
+            _uow = new Uow(db);
         }
         // GET: api/values
         [HttpGet]
         public IEnumerable<Url> Get()
         {
-            return _uow.UrlRepository.GetAll();
+            var result = _uow.UrlRepository.GetAll();
+            return result;
         }
 
         // GET api/values/5
