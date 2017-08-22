@@ -8,9 +8,10 @@ using DataBase;
 namespace DataBase.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20170822123932_count")]
+    partial class count
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
@@ -18,12 +19,10 @@ namespace DataBase.Migrations
 
             modelBuilder.Entity("MyModels.Url", b =>
                 {
-                    b.Property<string>("IdUrl")
+                    b.Property<int>("IdUrl")
                         .ValueGeneratedOnAdd();
 
                     b.Property<long>("Count");
-
-                    b.Property<DateTime?>("DateCreate");
 
                     b.Property<int>("IdUser");
 

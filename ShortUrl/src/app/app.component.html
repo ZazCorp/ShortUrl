@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>ASP.NET CORE + Angular 2 + Bootstrap</h1>
+
+<addurl>
+</addurl>
+<table class="">
+  <thead>
+  <tr class="row">
+    <th class="col-lg-1">Идентификатор записи</th>
+    <th class="col-lg-1">Идентификатор пользователя</th>
+    <th class="col-lg-5">Исходная ссылка</th>
+    <th class="col-lg-3">Короткая ссылка</th>
+    <th class="col-lg-1">Колличество посящений</th>
+    <th>Дата создания</th>
+  </tr>
+  </thead>
+  <tr class="row" *ngFor="let url of urls">
+    <td class="">
+      {{url.idUrl}}
+    </td>
+    <td class="">
+      {{url.idUser}}
+    </td>
+    <td class="">
+     <a href="{{url.sourceUrl}}">{{url.sourceUrl}}</a> 
+    </td>
+    <td class="">
+     <a href="{{url.shortUrl}}">{{url.shortUrl}}</a> 
+    </td>
+    <td class="">
+      {{url.count}}
+    </td>
+    <td class="">
+      {{url.dateCreate | date:"dd.MM.yyyy HH:mm"}}
+    </td>
+  </tr>
+</table>
+
+

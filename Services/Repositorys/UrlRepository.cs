@@ -26,15 +26,21 @@ namespace Services.Repositorys
             return _db.Urls;
         }
 
-        public Url Get(int id)
+        public Url Get(string id)
         {
             return _db.Urls.Find(id);
         }
 
         public void Create(Url item)
         {
+
             _db.Urls.Add(item);
         }
-       
-    }
+
+      public void Update(Url sUrl)
+      {
+        _db.Entry(sUrl).State =EntityState.Modified;;
+      }
+      
+  }
 }
