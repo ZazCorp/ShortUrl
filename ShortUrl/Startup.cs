@@ -76,6 +76,7 @@ namespace ShortUrl
       loggerFactory.AddConsole(Configuration.GetSection("Logging"));
       loggerFactory.AddDebug();
 
+     
       app.Use(async (context, next) =>
           {
             await next();

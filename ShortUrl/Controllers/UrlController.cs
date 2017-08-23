@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Net.Http.Headers;
 using MyModels;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -32,19 +33,20 @@ namespace ShortUrl.Controllers
     [HttpGet]
     public IEnumerable<Url> Get()
     {
-      var result = _uow.UrlRepository.GetAll();
+      string Id = "";
+
+     Request.Cookies.TryGetValue("keyZaz", out Id);
+    
+      var result = _uow.UrlRepository.GetAll().Where(x => x.IdUser == Id);
       return result;
     }
 
     // GET api/values/5
-    [HttpGet("{id}")]
+    [HttpGet("{id}",Name = "GetUrl")]
     public IActionResult Get(string id)
     {
       var sUrl = _uow.UrlRepository.Get(id);
-      sUrl.Count++;
-      _uow.UrlRepository.Update(sUrl);
-      _uow.Save();
-
+      
       return Redirect(sUrl.SourceUrl);
     }
 
@@ -52,26 +54,20 @@ namespace ShortUrl.Controllers
     [HttpPost]
     public IActionResult Post([FromBody]Url url)
     {
-      var strUrl = HttpContext.Request.GetDisplayUrl();
-      var sUrl = _urlService.CreateUrl(url.SourceUrl);
-      url.IdUrl = sUrl;
      
-      url.ShortUrl = strUrl+"/"+sUrl;
-      url.DateCreate = DateTime.Now;
-      
-
       _uow.UrlRepository.Create(url);
       _uow.Save();
 
-
-      return Json(url.ShortUrl);
+      return CreatedAtRoute("GetUrl", new { id = url.IdUrl }, url);
 
     }
 
     // PUT api/values/5
-    [HttpPut("{id}")]
+    [HttpPut]
     public void Put([FromBody]Url url)
     {
+      _uow.UrlRepository.Update(url);
+      _uow.Save();
     }
 
     // DELETE api/values/5

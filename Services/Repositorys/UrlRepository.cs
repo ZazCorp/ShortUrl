@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using DataBase;
 
@@ -23,7 +24,7 @@ namespace Services.Repositorys
 
         public IEnumerable<Url> GetAll()
         {
-            return _db.Urls;
+            return _db.Urls.OrderBy(x => x.DateCreate);
         }
 
         public Url Get(string id)
