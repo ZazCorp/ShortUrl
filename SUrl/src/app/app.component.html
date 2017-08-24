@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!--<app-root>load</app-root>-->
+<div class="row">
+<table class="">
+  <thead>
+  <tr class="row">
+    <th class="col-lg-1">Идентификатор записи</th>
+    <th class="col-lg-1">Идентификатор пользователя</th>
+    <th class="col-lg-5">Исходная ссылка</th>
+    <th class="col-lg-3">Короткая ссылка</th>
+    <th class="col-lg-1">Колличество посящений</th>
+    <th>Дата создания</th>
+  </tr>
+  </thead>
+  <tr class="row" *ngFor="let url of urls">
+    <td class="">
+      {{url.idUrl}}
+    </td>
+    <td class="">
+      {{url.idUser}}
+    </td>
+    <td class="">
+     <a href="{{url.sourceUrl}}">{{url.sourceUrl}}</a> 
+    </td>
+    <td class="">
+      <a href="{{url.shortUrl}}" target="_blank" (click)="onClick(url)">{{url.shortUrl}}</a>
+    </td>
+    <td class="">
+      {{url.count}}
+    </td>
+    <td class="">
+      {{url.dateCreate | date:"dd.MM.yyyy HH:mm Z"}}
+    </td>
+  </tr>
+</table>
+</div>
