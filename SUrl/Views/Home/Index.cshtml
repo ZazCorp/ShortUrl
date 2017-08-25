@@ -1,44 +1,10 @@
-﻿<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>SUrlApp</title>
-    <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    @*<link href="styles.css" rel="stylesheet" />*@
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Angular2 Code -->
-    <base href="/">
-    <script src="/node_modules/core-js/client/shim.js"></script>
-    <script src="/node_modules/zone.js/dist/zone.js"></script>
-    <script src="/node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="/node_modules/systemjs/dist/system.src.js"></script>
-    <script src="systemjs.config.js"></script>
-    <script>
-        System.import('app').catch(function(err){ console.error(err); });
-    </script>
-    <!-- Angular2 Code -->
-  
-</head>
-<body>
-    <div class="container body-content">
+﻿@{
+  ViewData["Title"] = "Home Page";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-        <h1>ASP.NET CORE + Angular 2 + Bootstrap</h1>
+<h1>ASP.NET CORE + Angular 2 + Bootstrap</h1>
 
-        <my-app>Загрузка...</my-app>
-        <div hidden="">
-            <app-root>load</app-root>
-            <addurl>
-            </addurl>
-        </div>
+<my-app>Загрузка...</my-app>
 
-        <hr />
-        <footer>
-            <p>&copy; 2017 - ZazCorp</p>
-        </footer>
-    </div>
-</body>
-</html>
+

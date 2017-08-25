@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./wwwroot",
+    "outDir": "./wwwroot/app",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
