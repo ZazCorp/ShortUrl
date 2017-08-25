@@ -7,7 +7,7 @@
     // указываем загрузчику System, где искать модули
     map: {
       // наше приложение будет находиться в папке app
-      app: 'app',
+      app: 'myapp',
       // пакеты angular
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
       '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
@@ -30,7 +30,16 @@
       },
       rxjs: {
         defaultExtension: 'js'
-      }
+            },
+      'angular-in-memory-web-api': {
+        main: './index.js',
+        defaultExtension: 'js'
+      },
+      'angular2-cookie': {
+        main: './core.js',
+        defaultExtension: 'js'
+      }
+
     }
   });
 })(this);

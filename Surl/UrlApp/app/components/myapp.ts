@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
+  moduleId: module.id,
   selector: 'my-app',
   template: `<div>
  
 <ul class="nav nav-tabs">
-  <li><a routerLink="/add">Создать ссылку</a></li>
-  <li><a routerLink="/app">Просмотреть ссылки</a></li>
+  <li><a routerLink="/addurl">Создать ссылку</a></li>
+  <li><a routerLink="/urllist">Просмотреть ссылки</a></li>
 
 </ul>
   <router-outlet>

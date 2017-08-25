@@ -7,8 +7,10 @@ import { UrlService } from "../../services/UrlService";
 
 
 @Component({
+ 
   selector: 'app-root',
-  templateUrl: './urllist.component.html',
+  templateUrl: require('urllist.component.html'),
+  
   providers: [UrlService]
 })
 

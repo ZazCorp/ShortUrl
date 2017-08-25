@@ -4,8 +4,10 @@ import { UrlService } from "../../services/UrlService";
 
 
 @Component({
+ 
   selector: 'addurl',
-  templateUrl: './addurl.component.html',
+  templateUrl: require('addurl.component.html'),
+
   providers:[UrlService]
 })
 

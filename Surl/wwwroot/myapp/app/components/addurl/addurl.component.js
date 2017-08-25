@@ -10,34 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var Url_1 = require("../../models/Url");
 var UrlService_1 = require("../../services/UrlService");
-var UrlListComponent = (function () {
-    function UrlListComponent(urlSrv) {
+var AddUrlComponent = (function () {
+    function AddUrlComponent(urlSrv) {
         this.urlSrv = urlSrv;
-        this.urls = [];
+        this.url = new Url_1.Url();
     }
-    UrlListComponent.prototype.ngOnInit = function () {
-        this.refresh();
-    };
-    UrlListComponent.prototype.onClick = function (url) {
-        this.urlSrv.clickUrl(url);
+    AddUrlComponent.prototype.onClick = function (url) {
+        this.urlSrv.createUrl(url);
     };
     ;
-    UrlListComponent.prototype.refresh = function () {
-        var _this = this;
-        this.urlSrv.getUrls().subscribe(function (resp) {
-            _this.urls = resp.json();
-        });
-    };
-    return UrlListComponent;
+    return AddUrlComponent;
 }());
-UrlListComponent = __decorate([
+AddUrlComponent = __decorate([
     core_1.Component({
-        selector: 'app-root',
-        templateUrl: './urllist.component.html',
+        selector: 'addurl',
+        templateUrl: require('addurl.component.html'),
         providers: [UrlService_1.UrlService]
     }),
     __metadata("design:paramtypes", [UrlService_1.UrlService])
-], UrlListComponent);
-exports.UrlListComponent = UrlListComponent;
-//# sourceMappingURL=urllist.component.js.map
+], AddUrlComponent);
+exports.AddUrlComponent = AddUrlComponent;
+//# sourceMappingURL=addurl.component.js.map
