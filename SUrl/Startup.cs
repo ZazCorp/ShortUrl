@@ -7,6 +7,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using DataBase;
+using Microsoft.EntityFrameworkCore;
+using Services;
+using Interfaces;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace Surl
 {
@@ -76,6 +83,11 @@ namespace Surl
       }
 
       app.UseStaticFiles();
+      app.UseStaticFiles(new StaticFileOptions()
+      {
+        FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"node_modules")),
+        RequestPath = new PathString("/node_modules")
+      });
 
       app.UseMvc(routes =>
       {

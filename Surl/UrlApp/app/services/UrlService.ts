@@ -3,7 +3,7 @@ import { Url } from '../models/Url';
 import { Injectable} from '@angular/core';
 import { Http } from '@angular/http';
 import { Headers } from '@angular/http';
-import { CookieService } from '../../../node_modules/angular2-cookie/services/cookies.service';
+import { CookieService } from 'angular2-cookie/core';
 
 @Injectable()
 

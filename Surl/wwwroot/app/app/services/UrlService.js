@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var http_2 = require("@angular/http");
-var cookies_service_1 = require("../../../node_modules/angular2-cookie/services/cookies.service");
+var core_2 = require("angular2-cookie/core");
 var UrlService = (function () {
     function UrlService(http, cookieService) {
         this.http = http;
@@ -83,7 +83,7 @@ var UrlService = (function () {
 }());
 UrlService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http, cookies_service_1.CookieService])
+    __metadata("design:paramtypes", [http_1.Http, core_2.CookieService])
 ], UrlService);
 exports.UrlService = UrlService;
 //# sourceMappingURL=UrlService.js.map

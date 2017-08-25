@@ -9,7 +9,7 @@ import { UrlService } from "../../services/UrlService";
   providers:[UrlService]
 })
 
-export class AddUrl {
+export class AddUrlComponent {
   constructor(private urlSrv: UrlService) { }
   url: Url = new Url();
 

@@ -12,24 +12,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Url_1 = require("../../models/Url");
 var UrlService_1 = require("../../services/UrlService");
-var AddUrl = (function () {
-    function AddUrl(urlSrv) {
+var AddUrlComponent = (function () {
+    function AddUrlComponent(urlSrv) {
         this.urlSrv = urlSrv;
         this.url = new Url_1.Url();
     }
-    AddUrl.prototype.onClick = function (url) {
+    AddUrlComponent.prototype.onClick = function (url) {
         this.urlSrv.createUrl(url);
     };
     ;
-    return AddUrl;
+    return AddUrlComponent;
 }());
-AddUrl = __decorate([
+AddUrlComponent = __decorate([
     core_1.Component({
         selector: 'addurl',
         templateUrl: './addurl.component.html',
         providers: [UrlService_1.UrlService]
     }),
     __metadata("design:paramtypes", [UrlService_1.UrlService])
-], AddUrl);
-exports.AddUrl = AddUrl;
+], AddUrlComponent);
+exports.AddUrlComponent = AddUrlComponent;
 //# sourceMappingURL=addurl.component.js.map

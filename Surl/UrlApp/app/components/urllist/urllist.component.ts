@@ -12,7 +12,7 @@ import { UrlService } from "../../services/UrlService";
   providers: [UrlService]
 })
 
-export class AppComponent implements OnInit {
+export class UrlListComponent implements OnInit {
 
   constructor(private urlSrv: UrlService) { }
   urls: Url[] = [];

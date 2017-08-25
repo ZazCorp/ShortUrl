@@ -11,33 +11,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var UrlService_1 = require("../../services/UrlService");
-var AppComponent = (function () {
-    function AppComponent(urlSrv) {
+var UrlListComponent = (function () {
+    function UrlListComponent(urlSrv) {
         this.urlSrv = urlSrv;
         this.urls = [];
     }
-    AppComponent.prototype.ngOnInit = function () {
+    UrlListComponent.prototype.ngOnInit = function () {
         this.refresh();
     };
-    AppComponent.prototype.onClick = function (url) {
+    UrlListComponent.prototype.onClick = function (url) {
         this.urlSrv.clickUrl(url);
     };
     ;
-    AppComponent.prototype.refresh = function () {
+    UrlListComponent.prototype.refresh = function () {
         var _this = this;
         this.urlSrv.getUrls().subscribe(function (resp) {
             _this.urls = resp.json();
         });
     };
-    return AppComponent;
+    return UrlListComponent;
 }());
-AppComponent = __decorate([
+UrlListComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
         templateUrl: './urllist.component.html',
         providers: [UrlService_1.UrlService]
     }),
     __metadata("design:paramtypes", [UrlService_1.UrlService])
-], AppComponent);
-exports.AppComponent = AppComponent;
+], UrlListComponent);
+exports.UrlListComponent = UrlListComponent;
 //# sourceMappingURL=urllist.component.js.map
