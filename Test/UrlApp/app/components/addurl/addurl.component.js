@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,14 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var Url_1 = require("../../models/Url");
-var UrlService_1 = require("../../services/UrlService");
+import { Component } from '@angular/core';
+import { Url } from "../../models/Url";
+import { UrlService } from "../../services/UrlService";
 var AddUrlComponent = (function () {
     function AddUrlComponent(urlSrv) {
         this.urlSrv = urlSrv;
-        this.url = new Url_1.Url();
+        this.url = new Url();
     }
     AddUrlComponent.prototype.onClick = function (url) {
         this.urlSrv.createUrl(url);
@@ -24,12 +22,12 @@ var AddUrlComponent = (function () {
     return AddUrlComponent;
 }());
 AddUrlComponent = __decorate([
-    core_1.Component({
+    Component({
         selector: 'addurl',
         templateUrl: './addurl.component.html',
-        providers: [UrlService_1.UrlService]
+        providers: [UrlService]
     }),
-    __metadata("design:paramtypes", [UrlService_1.UrlService])
+    __metadata("design:paramtypes", [UrlService])
 ], AddUrlComponent);
-exports.AddUrlComponent = AddUrlComponent;
+export { AddUrlComponent };
 //# sourceMappingURL=addurl.component.js.map

@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyModels", "MyModels\MyModels.csproj", "{4219371C-4488-4787-9CC2-6453910A774B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Surl", "Surl\Surl.csproj", "{DF9E9C4E-E9FC-48AC-B003-C16033F95DCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortUrl", "ShortUrl\ShortUrl.csproj", "{9203D887-82B3-422F-AF08-1401FCF7D158}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{4219371C-4488-4787-9CC2-6453910A774B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4219371C-4488-4787-9CC2-6453910A774B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4219371C-4488-4787-9CC2-6453910A774B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF9E9C4E-E9FC-48AC-B003-C16033F95DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF9E9C4E-E9FC-48AC-B003-C16033F95DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF9E9C4E-E9FC-48AC-B003-C16033F95DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF9E9C4E-E9FC-48AC-B003-C16033F95DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9203D887-82B3-422F-AF08-1401FCF7D158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9203D887-82B3-422F-AF08-1401FCF7D158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9203D887-82B3-422F-AF08-1401FCF7D158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9203D887-82B3-422F-AF08-1401FCF7D158}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

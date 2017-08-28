@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,9 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var UrlService_1 = require("../../services/UrlService");
+import { Component } from '@angular/core';
+import { UrlService } from "../../services/UrlService";
 var UrlListComponent = (function () {
     function UrlListComponent(urlSrv) {
         this.urlSrv = urlSrv;
@@ -32,12 +30,12 @@ var UrlListComponent = (function () {
     return UrlListComponent;
 }());
 UrlListComponent = __decorate([
-    core_1.Component({
+    Component({
         selector: 'app-root',
         templateUrl: './urllist.component.html',
-        providers: [UrlService_1.UrlService]
+        providers: [UrlService]
     }),
-    __metadata("design:paramtypes", [UrlService_1.UrlService])
+    __metadata("design:paramtypes", [UrlService])
 ], UrlListComponent);
-exports.UrlListComponent = UrlListComponent;
+export { UrlListComponent };
 //# sourceMappingURL=urllist.component.js.map

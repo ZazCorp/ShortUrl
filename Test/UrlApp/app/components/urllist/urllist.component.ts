@@ -23,7 +23,7 @@ export class UrlListComponent implements OnInit {
   }
  
 
-  onClick(url) {
+  onClick(url:Url) {
     this.urlSrv.clickUrl(url);
   };
 

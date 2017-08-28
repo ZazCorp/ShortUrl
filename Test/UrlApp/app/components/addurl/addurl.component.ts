@@ -15,7 +15,7 @@ export class AddUrlComponent {
   constructor(private urlSrv: UrlService) { }
   url: Url = new Url();
 
-  onClick(url) {
+  onClick(url:Url) {
      this.urlSrv.createUrl(url);
   };
 }
