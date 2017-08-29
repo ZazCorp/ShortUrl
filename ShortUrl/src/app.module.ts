@@ -29,7 +29,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
   ],
   exports: [RouterModule],
   providers: [CookieService],
-  bootstrap: [UrlListComponent, AddUrlComponent, MainAppComponent]
+  bootstrap: [ MainAppComponent]
 })
 export class AppModule {
   
